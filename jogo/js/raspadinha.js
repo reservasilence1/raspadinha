@@ -54,29 +54,29 @@ function persistTrackingParams() {
 const CONFIG = {
   totalTentativas: 3,
   premiosPorTentativa: {
-    1: { valor: 20, imagem: '/jogo/img/R$20,00.webp' },
-    2: { valor: 180, imagem: '/jogo/img/R$100,00.webp' },
-    3: { valor: 4800, imagem: '/jogo/img/R5.webp' }
+    1: { valor: 20, imagem: '/jogo/images/R$20,00.webp' },
+    2: { valor: 180, imagem: '/jogo/images/R$100,00.webp' },
+    3: { valor: 4800, imagem: '/jogo/images/R5.webp' }
   },
   matrizPremios: [
-    ['../img/R$100,00.webp', '/jogo/img/R$500,00.webp', '/jogo/img/R$200,00.webp'],
-    ['../img/R$500,00.webp', '/jogo/img/R1.webp', '/jogo/img/R5.webp'],
-    ['../img/R10.webp', '/jogo/img/R$50,00.webp', '/jogo/img/R15.webp']
+    ['/jogo/images/R$100,00.webp', '/jogo/images/R$500,00.webp', '/jogo/images/R$200,00.webp'],
+    ['/jogo/images/R$500,00.webp', '/jogo/images/R1.webp', '/jogo/images/R5.webp'],
+    ['/jogo/images/R10.webp', '/jogo/images/R$50,00.webp', '/jogo/images/R15.webp']
   ],
   valoresDasImagens: {
-    '/jogo/img/R$1,00.webp': 'R$1,00',
-    '/jogo/img/R$2,00.webp': 'R$2,00',
-    '/jogo/img/R$5,00.webp': 'R$5,00',
-    '/jogo/img/R$10,00.webp': 'R$10,00',
-    '/jogo/img/R$20,00.webp': 'R$20,00',
-    '/jogo/img/R$50,00.webp': 'R$50,00',
-    '/jogo/img/R$100,00.webp': 'R$100,00',
-    '/jogo/img/R$200,00.webp': 'R$200,00',
-    '/jogo/img/R$500,00.webp': 'R$500,00',
-    '/jogo/img/R1.webp': 'R$1.000,00',
-    '/jogo/img/R5.webp': 'R$5.000,00',
-    '/jogo/img/R10.webp': 'R$10.000,00',
-    '/jogo/img/R15.webp': 'R$15.000,00'
+    '/jogo/images/R$1,00.webp': 'R$1,00',
+    '/jogo/images/R$2,00.webp': 'R$2,00',
+    '/jogo/images/R$5,00.webp': 'R$5,00',
+    '/jogo/images/R$10,00.webp': 'R$10,00',
+    '/jogo/images/R$20,00.webp': 'R$20,00',
+    '/jogo/images/R$50,00.webp': 'R$50,00',
+    '/jogo/images/R$100,00.webp': 'R$100,00',
+    '/jogo/images/R$200,00.webp': 'R$200,00',
+    '/jogo/images/R$500,00.webp': 'R$500,00',
+    '/jogo/images/R1.webp': 'R$1.000,00',
+    '/jogo/images/R5.webp': 'R$5.000,00',
+    '/jogo/images/R10.webp': 'R$10.000,00',
+    '/jogo/images/R15.webp': 'R$15.000,00'
   }
 };
 
@@ -727,4 +727,5 @@ window.resetarJogo = resetarJogo;
 window.testarRaspadinha = testarRaspadinha;
 window.estadoJogo = estadoJogo;
 window.tocarSomGanho = tocarSomGanho;
+
 
