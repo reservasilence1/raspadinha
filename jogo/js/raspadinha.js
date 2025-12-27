@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Função para inicializar o áudio
 function inicializarAudio() {
   try {
-    audioGanho = new Audio('../img/som.mp3');
+    audioGanho = new Audio('/jogo/images/som.mp3');
     audioGanho.preload = 'auto';
     audioGanho.volume = 0.7;
     audioGanho.loop = false;
@@ -727,5 +727,6 @@ window.resetarJogo = resetarJogo;
 window.testarRaspadinha = testarRaspadinha;
 window.estadoJogo = estadoJogo;
 window.tocarSomGanho = tocarSomGanho;
+
 
 
