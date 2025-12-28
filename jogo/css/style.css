@@ -1,0 +1,620 @@
+/* Reset e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0565B7;
+    color: #333;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 110;
+    background-color: #045CA8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 64px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 32px;
+    width: auto;
+}
+
+.divider {
+    width: 3px;
+    height: 20px;
+    background-color: #F7A600;
+    border-radius: 3px;
+}
+
+.title {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.saldo {
+    background-color: #29A745;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.usuario {
+    background-color: white;
+    color: #045CA8;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.usuario i {
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Card */
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    color: #045CA8;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.tentativas {
+    color: #666;
+    font-size: 14px;
+}
+
+.tentativas strong {
+    color: #045CA8;
+}
+
+/* Raspadinha Area */
+.raspadinha-area {
+    margin-bottom: 24px;
+}
+
+.raspadinha-wrapper {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.raspadinha-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.raspadinha-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#scratchCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.premios-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    padding: 8px;
+    z-index: 0;
+}
+
+.premio-cell {
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.premio-cell img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* Botão Jogar */
+.btn-jogar {
+    width: 100%;
+    background-color: #F3920B;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(243, 146, 11, 0.3);
+}
+
+.btn-jogar:hover {
+    background-color: #e0830a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(243, 146, 11, 0.4);
+}
+
+.btn-jogar:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Instruções */
+.instrucoes-alerta {
+    background-color: #E7F0FF;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.alerta-content {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.alerta-icon {
+    color: #0C60AA;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.alerta-texto h4 {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.alerta-texto p {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Prêmios */
+.premios-title {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.premios-container {
+    background-color: #DEE9FB;
+    border-radius: 12px;
+    padding: 16px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.premios-grid-scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.premio-item {
+    display: flex;
+    justify-content: center;
+}
+
+.premio-box {
+    width: 100px;
+    aspect-ratio: 1/1;
+    background-color: #045CA8;
+    border: 2px solid #6097CA;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.premio-box img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.premio-valor {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.premio-surpresa {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background-color: #0A5BA7;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.resultado-imagem img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+#resultadoTexto {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.valor-ganho {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.resultado-info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.resultado-info p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.modal-footer {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.btn-modal {
+    background-color: #0A5BA7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    transition: background-color 0.3s;
+}
+
+.btn-modal:hover {
+    background-color: #084A8A;
+}
+
+/* Modal Final */
+.final .modal-header {
+    background-color: #2ccb74;
+}
+
+.final-header {
+    justify-content: center;
+}
+
+.final-icon {
+    font-size: 60px;
+    color: #F7A600;
+    margin-bottom: 20px;
+}
+
+.final-total {
+    background-color: #2ccb74;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.final-total h2 {
+    font-size: 32px;
+    margin: 10px 0 0;
+}
+
+.final-resumo {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.resumo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.resumo-item.total {
+    border-top: 2px solid #ddd;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+.ganho, .total-ganho {
+    color: #2ccb74;
+    font-weight: bold;
+}
+
+.btn-resgatar {
+    background-color: #2ccb74;
+}
+
+.btn-resgatar:hover {
+    background-color: #25a35a;
+}
+
+
+/* ESTILOS PARA O GRID DE PRÊMIOS (que aparece ao raspar) */
+
+/* Fundo do container da raspadinha */
+.raspadinha-container {
+    background-color: #f0f0f0 !important; /* Cinza claro de fundo */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Células individuais dos prêmios */
+.premio-cell {
+    background-color: #045CA8 !important; /* Azul escuro */
+    border: 2px solid #0A5BA7 !important;
+    border-radius: 8px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Imagens dentro das células */
+.premio-cell img {
+    width: 70% !important;
+    height: 70% !important;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+    
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Efeito hover para as células (opcional) */
+.premio-cell:hover {
+   
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+/* Garantir que o grid fique visível */
+.premios-grid {
+    
+    padding: 8px;
+    gap: 4px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 480px) {
+    .premio-cell {
+        padding: 3px;
+    }
+    
+    .premio-cell img {
+        width: 60% !important;
+        height: 60% !important;
+    }
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 12px;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+    
+    .card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+    
+    .premio-box {
+        width: 85px;
+    }
+    
+    .premio-box img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+    }
+}
